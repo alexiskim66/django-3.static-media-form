@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+
+    <title>BLOG</title>
+    
+
+<style>
+    body {
+        text-align: center;
+        font-family: Song Myung;
+        background: rgb(220, 255, 165);
+    }
+
+    #content {
+        border: dotted;
+        border-color:olive;
+        border-radius: 20px;
+        padding: 5%;
+    }
+
+    #add {
+        font-size: large;
+        color: olive;
+        border: solid;
+        border-color: olive;
+        padding: 10px;
+    }
+
+    #plant_name {
+        color:olive;
+    }
+
+    h1 {
+        color:olive;
+        padding: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color:olive;
+        width: 100%;
+    }
+
+    li a {
+        display: block;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #555;
+        color: olive;
+    }
+
+    li a.active {
+        background-color:lightgoldenrodyellow;
+        color: olive;
+    }
+
+    hr {
+        border-color:olive;
+    }
+
+
+</style>
+
+</head>
+
+<body>
+{% load static %}
+
+<ul>
+    <li><a class="active" href="{% url 'home' %}">식물도감</li></a>
+    <li><a href="{% url 'new' %}">식물 추가하기</li></a>
+    <li><a href="{% url 'home2' %}">식물원 방문하기</li></a>
+</ul>
+
+<br>
+
+<a href="{%url 'home' %}">
+<img src="{% static 'green-tea.png'%}" alt="" width="50" height="50">
+</a>
+
+
+
+    <div class="containter">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    
+
+
+</body>
+</html>

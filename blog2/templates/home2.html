@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+    <h1>다양한 수목원의 위치</h1>
+
+    <hr>
+    <div class="container">
+    {% for blog in objects%}
+        <h3>{{blog.subject}}</h3>
+        <div>{{blog.content}} 
+
+        </div>
+    {% endfor %}
+    </div>
+    <br>
+    <br>
+
+    <a href="{%url 'home2' %}">  
+        <img src="{% static 'lavender.png'%}" alt="" width="50" height="50">
+    </a>
+
+{% endblock %}
